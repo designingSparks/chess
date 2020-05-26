@@ -30,6 +30,10 @@ function onDrop (source, target) {
   // illegal move
   if (move === null) return 'snapback'
 
+  var promotion = true;
+  if (promotion)
+    return 'trash'; //and create new piece
+  
   updateStatus()
   sendMovePython(source, target) //Send the move back to python for engine update
 }
